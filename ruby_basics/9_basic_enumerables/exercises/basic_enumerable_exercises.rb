@@ -33,20 +33,38 @@ def find_longest_word(word_list)
   # hint: the result of each iteration should be the accumulator when its 
   # length is greater than word.length (otherwise the result should be the word)
 
-  word_list.reduce(0) do|sum,word| 
-    
+  word_list.reduce("") do|existing,word| 
+    if word.length >= existing.length
+      existing = word
+    else
+      existing = existing
+    end
   end
 
 end
 
 def find_longer_words(word_list, base_word)
+  
   # use #reduce to iterate through each item of the word_list (an array)
   # return an array of words that is longer than the base_word (a string)
   # hint: use a new array or an empty array as the initial accumulator value
+
+  word_list.reduce(new_array=[]) do|acc,word|
+    if word.length > base_word.length
+      new_array.push(word)
+    else 
+      new_array
+    end
+  end
 end
 
 def find_word_lengths(word_list)
   # use #reduce to iterate through each item of the word_list (an array)
   # return a hash with each word as the key and its length as the value
   # hint: use a new hash or an empty hash as the initial accumulator value
+
+  word_list.reduce(final_hash = {}) do |acc,word|
+    interim_hash = {word => word.length.to_i}
+    final_hash.merge!(interim_hash)
+  end
 end

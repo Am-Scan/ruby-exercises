@@ -77,7 +77,7 @@ RSpec.describe 'Basic Enumerable Exercises' do
       expect(find_longest_word(list)).to eq('rabbit')
     end
 
-    xit 'returns the last word when they are all the same length' do
+    it 'returns the last word when they are all the same length' do
       animals = ['cat', 'dog', 'fox', 'bee', 'owl']
       expect(find_longest_word(animals)).to eq('owl')
     end
@@ -85,13 +85,13 @@ RSpec.describe 'Basic Enumerable Exercises' do
 
   describe 'find longer words exercise' do
     
-    xit 'returns an array of words longer than the base word' do
+    it 'returns an array of words longer than the base word' do
       animals = ['cat', 'horse', 'lion', 'panda', 'rabbit']
       result = ['horse', 'panda', 'rabbit']
       expect(find_longer_words(animals, 'bear')).to eq(result)
     end
 
-    xit 'returns an empty array when they are all the same length' do
+    it 'returns an empty array when they are all the same length' do
       animals = ['cat', 'dog', 'fox', 'bee', 'owl']
       result = []
       expect(find_longer_words(animals, 'pig')).to eq(result)
@@ -100,13 +100,13 @@ RSpec.describe 'Basic Enumerable Exercises' do
 
   describe 'find word length exercise' do
     
-    xit 'returns a hash with rocket syntax when using strings' do
+    it 'returns a hash with rocket syntax when using strings' do
       animals = ['cat', 'horse', 'rabbit', 'deer']
       result = { 'cat' => 3, 'horse' => 5, 'rabbit' => 6, 'deer' => 4 }
       expect(find_word_lengths(animals)).to eq(result)
     end
     
-    xit 'returns a hash with symbols syntax when using symbols' do
+    it 'returns a hash with symbols syntax when using symbols' do
       animals = [:cat, :horse, :rabbit, :deer]
       result = { cat: 3, horse: 5, rabbit: 6, deer: 4 }
       expect(find_word_lengths(animals)).to eq(result)
